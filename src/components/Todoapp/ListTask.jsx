@@ -1,17 +1,4 @@
-// import React from 'react'
 
-// const ListTask = () => {
-//   return (
-//     <>
-//     <div className='list-tasks'>
-//       Task Name
-//       <button className='delete-btn'>Delete</button>
-      
-//       </div></>
-//   )
-// }
-
-// export default ListTask
 
 
 import React from 'react'
@@ -19,14 +6,14 @@ import { IoMdDoneAll } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-const ListTask = ({task,index,removeTask}) => {
+const ListTask = ({task,index,removeTask,completeTask}) => {
   return (
     <>
     <div className='list-tasks'>
       <ul>
 
         <li className='list-item'>  
-          <div className='list-item-list' id='list-item'>
+          <div className='list-item-list' id={task.status ? 'list-item' : ''}>
           {task.title}
             </div>
 
@@ -34,6 +21,8 @@ const ListTask = ({task,index,removeTask}) => {
         <IoMdDoneAll 
         className='list-item-icons'
         id='complete'
+        title='complete'
+        onClick={()=>completeTask(task.id)}
         />
         <FiEdit 
         className='list-item-icons'

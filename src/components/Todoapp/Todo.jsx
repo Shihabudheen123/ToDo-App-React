@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import "./Todo.css";
 import AddTask from "./AddTask";
 import ListTask from "./ListTask";
@@ -18,6 +18,16 @@ const Todo = () => {
     setTasks(newTask);
     
   }
+  const completeTask = (id) => {
+    const complete = tasks.map((list) => {
+      if (list.id === id) {
+        return { ...list, status: !list.status };
+      }
+      return list;
+    });
+    setTasks(complete);
+  };
+  
   return (
     <>
       <div className="todo-container">
@@ -27,7 +37,7 @@ const Todo = () => {
         </div>
         <div className="tasks">
           {tasks.map((task,index) => (
-            <ListTask task={task}  removeTask={removeTask} index={index} key={task.id}/>
+            <ListTask task={task}  removeTask={removeTask} completeTask={completeTask} index={index} key={task.id}  />
           ))}
         </div>
       </div>
