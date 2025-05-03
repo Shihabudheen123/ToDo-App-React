@@ -19,7 +19,7 @@ import { IoMdDoneAll } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-const ListTask = ({task}) => {
+const ListTask = ({task,index,removeTask}) => {
   return (
     <>
     <div className='list-tasks'>
@@ -42,6 +42,7 @@ const ListTask = ({task}) => {
         <MdDelete
         className='list-item-icons'
         id='delete'
+        onClick={()=>{removeTask(index)}}
         />
         </span>
         </li>
