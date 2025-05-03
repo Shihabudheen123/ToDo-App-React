@@ -19,7 +19,7 @@ import { IoMdDoneAll } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-const ListTask = () => {
+const ListTask = ({task}) => {
   return (
     <>
     <div className='list-tasks'>
@@ -27,7 +27,7 @@ const ListTask = () => {
 
         <li className='list-item'>  
           <div className='list-item-list' id='list-item'>
-            Task Name  
+          {task.title}
             </div>
 
             <span>  
