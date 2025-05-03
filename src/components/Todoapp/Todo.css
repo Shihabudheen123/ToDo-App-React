@@ -1,0 +1,105 @@
+.todo-container{
+    background-color: #012727d7;
+    width:60%;
+    margin: 5em auto;
+    margin-top: 30px;
+
+    border:none;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    
+    
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10;
+}
+.header{
+    font-size:2em;
+    text-align: center;
+}
+.input{
+    
+    padding: 10px;
+    width: 75%;
+    font-size: 1em;
+  
+    color: black;
+    background-color: white;
+    border: 1px;
+    border-radius:5px ;
+    padding: 14px;
+    margin: 1em;
+    
+    
+    outline: none;
+    box-shadow: none;
+   
+}
+.add-btn{
+    margin: -6px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 50px;
+    width: 115px;
+    margin-right: 10px;
+}
+.list-tasks{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+background-color: black;
+
+border-radius: 5px;
+padding: -10px;
+margin: 0.9em;
+margin-left: 20px;
+border: none;
+list-style-type: none;
+
+}
+.list-item{
+
+display: flex;
+}
+.list-item .list-item-list{
+    flex: 1;
+ 
+    
+}
+li{
+    margin-bottom: 15px;
+    margin-left: -12px;
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+     list-style-type: none;
+    border-radius: 5px;
+    padding: 10px; 
+}
+.list-item .list-item-icons{
+ 
+    cursor: pointer;
+    padding-right: 10px;
+} 
+#complete{
+    color: green;
+}
+#edit{
+    color: #007bff;
+}
+#delete{
+    color: orange;
+}
+#list-item{
+    text-decoration:line-through ;
+    opacity: 0.3;
+}
