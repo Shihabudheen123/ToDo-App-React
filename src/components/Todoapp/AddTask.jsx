@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const AddTask = ({addTask}) => {
-  const [value,setValue] = useState('')
+const AddTask = ({addTask,editId,editValue }) => {
+  const [value, setValue] = useState(editValue || '');
+  useEffect(() => {
+    setValue(editValue || ''); 
+  }, [editValue]);
   const addItem = () => {
   addTask(value)
   setValue('')
@@ -20,7 +23,7 @@ const AddTask = ({addTask}) => {
         ref={inputRef}
         onChange={(e)=>{setValue(e.target.value)}}
         />
-        <button className='add-btn' onClick={addItem}>ADD</button>
+        <button className='add-btn' onClick={addItem}>{editId ? 'EDIT' : "ADD"}</button>
     
     </div>
     </>
