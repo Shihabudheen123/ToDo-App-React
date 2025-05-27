@@ -9,7 +9,8 @@ const Todo = () => {
   const [inputValue, setInputValue] = useState('');
 
   useEffect(()=>{
-    document.title = `You have ${tasks.length} pending taks(s)`
+    const pendingTasks = tasks.filter(task => !task.status).length;
+    document.title = `You have ${pendingTasks} pending taks(s)`
   },[tasks])
   const addTask = (title) => {
    
@@ -30,9 +31,8 @@ const Todo = () => {
 
    
   };
-  const removeTask = (index) => {
-    const newTask = [...tasks]
-    newTask.splice(index, 1);
+  const removeTask = (id) => {
+    const newTask = tasks.filter(task => task.id !== id )
     setTasks(newTask);
     
   }
@@ -61,8 +61,8 @@ const Todo = () => {
           <AddTask addTask={addTask} editId={editId} editValue={inputValue} />
         </div>
         <div className="tasks">
-          {tasks.map((task,index) => (
-            <ListTask task={task}  removeTask={removeTask} completeTask={completeTask} editTask={editTask} index={index} key={task.id}  />
+          {tasks.map((task) => (
+            <ListTask task={task}  removeTask={removeTask} completeTask={completeTask} editTask={editTask}  key={task.id}  />
           ))}
         </div>
       </div>
